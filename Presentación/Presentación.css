@@ -1,0 +1,16 @@
+.imagen{
+    width: 300px; height: 200px;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.imgLarga{
+    width: 200px; height: 300px;
+}
+
+.cuadrada{
+    width: 300px; height: 300px;
+}
