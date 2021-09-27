@@ -12,22 +12,26 @@
 }
 
 body{
+
     background-color: black;
     color: white;
 }
 .imagen{
+
     width: 300px; height: 200px;
     margin-top: 20px;
 }
 
 
 .imgLarga{
+
     width: 200px; height: 300px;
     justify-content: center;
     margin-top: 20px;
 }
 
 .cuadrada{
+
     width: 300px; height: 300px;
     justify-content: center;
     margin-top: 20px;
@@ -35,6 +39,7 @@ body{
 }
 
 .columna{
+
     display:flex;
     flex-wrap: wrap;
     
@@ -51,12 +56,14 @@ body{
 
 
 .favoritos{
+
     padding: 50px;
    width: 300px;
    
   
 }
 .especial{
+
     width: 300px;
     display: flex;
     padding-right: 50px;
@@ -66,6 +73,7 @@ body{
 }
 
 .imagen_especial{
+
     width: 100px;
     text-align: center;
     padding: 10px;
@@ -73,6 +81,7 @@ body{
 
 
 .final{
+    
     margin-top: 100px;
     border: solid;
     border-radius: 10px;
