@@ -9,8 +9,8 @@
     width: 600px;
     text-align: center;
     padding: 50px;
-    margin-left: 300px;
-    margin-right: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body{
@@ -44,6 +44,9 @@ body{
 
     display:flex;
     flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    
     
     
 }
