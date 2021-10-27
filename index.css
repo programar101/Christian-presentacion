@@ -1,10 +1,18 @@
 
-
-/*comentario de prueba*/
-/*comentario de prueba 2*/
-/*comentario de prueba 3*/
-/*ultima*/
-
+button{
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background: darkred;
+    margin-left: 550px;
+    margin-right: auto;
+    text-align: center;
+}
 
 .texto_principal{
 
