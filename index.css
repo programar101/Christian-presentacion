@@ -1,4 +1,15 @@
 
+div{
+
+    width: 600px;
+    text-align: center;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
 button{
     border: none;
     padding-top: 10px;
@@ -9,9 +20,15 @@ button{
     margin-bottom: 5px;
     border-radius: 5px;
     background: darkred;
-    margin-left: 550px;
+    margin-left: auto;
     margin-right: auto;
     text-align: center;
+    display:flex;
+    padding-left: 50px;
+    padding-right: 50px;
+    
+    
+    
 }
 
 .texto_principal{
