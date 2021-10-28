@@ -6,7 +6,7 @@ div{
     padding: 50px;
     margin-left: auto;
     margin-right: auto;
-
+    display:flex;
 }
 
 
@@ -22,7 +22,6 @@ button{
     background: darkred;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
     display:flex;
     padding-left: 50px;
     padding-right: 50px;
@@ -31,12 +30,19 @@ button{
     
 }
 
+img{
+    width: 200px; height: 40%;
+    margin-top: 10px;
+
+}
+
+
 .texto_principal{
 
-    font-size: 40px;
+    font-size: 30px;
     width: 600px;
     text-align: center;
-    padding: 50px;
+    padding: 20px;
     margin-left: auto;
     margin-right: auto;
 }

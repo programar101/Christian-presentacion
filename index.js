@@ -150,7 +150,7 @@ function renderTexto(){
 
     let num = numRandom() //para que las funciones tengan el mismo numero random
     
-
+    datos[num].repeticiones += 1;
    // while (datos[num].repeticiones === 0 || datos[num].repeticiones === 1 ){
     
    let nuevoDato = document.createElement('div'); 
