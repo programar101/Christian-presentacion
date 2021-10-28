@@ -74,7 +74,7 @@ let datos =  [
         imagen: imag3
     },
     { 
-        texto:'No, no vivo cerca de la playa. De hecho voy poco.',
+        texto:'No vivo cerca de la playa. De hecho voy poco.',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
         imagen: imag4
     },
@@ -109,7 +109,7 @@ let datos =  [
         imagen: imag10
     },
     { 
-        texto: 'Mi otra película favorita es "American History X"',
+        texto: 'Mi segunda película favorita es "American History X"',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
         imagen: imag11
     },
@@ -151,8 +151,12 @@ function renderTexto(){
     let num = numRandom() //para que las funciones tengan el mismo numero random
     
     datos[num].repeticiones += 1;
-   // while (datos[num].repeticiones === 0 || datos[num].repeticiones === 1 ){
-    
+   
+   
+   // if (datos[num].repeticiones < 2 ){
+
+
+   
    let nuevoDato = document.createElement('div'); 
     
     nuevoDato.textContent = datos[num].texto; 
@@ -168,25 +172,17 @@ function renderTexto(){
    
     mostrar.appendChild(nuevaImagen)
 
+   // }else{
+
+
+   // }
+
     
     
 
 }   
 
 
-/*function renderImagen(){
-
-    datos[num].repeticiones += 1
-    
-    let nuevaImagen = document.createElement('img'); 
-   
-    nuevaImagen.src = datos[num].imagen;
-
-    mostrar.appendChild(nuevaImagen) 
-
-}
-
- */
 
 
 
@@ -199,10 +195,4 @@ randomBtn.addEventListener("click", function() {
    
     //datos[num].repeticiones += 1;
    
-
-
-
-}
-   
-
-)
+})
