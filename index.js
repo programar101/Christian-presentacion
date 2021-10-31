@@ -1,6 +1,4 @@
-
-
-var img = new Image(); 
+const img = new Image(); 
 
  
 
@@ -61,67 +59,67 @@ let datos =  [
     { 
     texto:'Tengo 25 años y cumplo el 04 de Octubre.',
     repeticiones: 0, //variable vacía para almacenar el numero de intentos
-    imagen: imag1
+    imagen: imag1,
+    tipoImagen : "horizontal"
     },
     { 
         texto:'Nací en Costa Rica',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: imag2
-    },
-    { 
-        texto:'Ahí queda Costa Rica:',
-        repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: imag3
-    },
-    { 
-        texto:'No vivo cerca de la playa. De hecho voy poco.',
-        repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: imag4
+        imagen: imag2,
+        tipoImagen : "cuadrada"
     },
     { 
         texto: 'Vivo solo, en Buenos Aires, en el barrio Parque Chacabuco.',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: imag5
+        imagen: imag5,
+        tipoImagen : "cuadrada"
     },
     { 
         texto: ' Mi libro favorito es "Hombres de Maíz" de Miguel Angel de Asturias',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: imag6
+        imagen: imag6,
+        tipoImagen : "vertical"
     },
     { 
         texto: 'Actualmente estoy leyendo el quinto libro de la Saga de "Canción de Hielo y Fuego" de George R.R. Martin.',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: imag7
+        imagen: imag7,
+        tipoImagen : "vertical"
     },
     { 
-        texto: 'Sé tocar muy poco la guitarra y tengo una banda pero mas que nada lo que hacemos es comer pizza',
+        texto: 'Sé tocar un poco la guitarra y tengo una banda llamada "Sidra"',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
-       imagen: imag8
+       imagen: imag8,
+       tipoImagen : "horizontal"
     },
     { 
         texto: 'Soy horrible jugando al ajedrez pero juego seguido.',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: imag9
+        imagen: imag9,
+        tipoImagen : "cuadrada"
     },
     { 
         texto: 'Mi película favorita es "El Padrino"',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: imag10
+        imagen: imag10,
+        tipoImagen : "vertical"
     },
     { 
         texto: 'Mi segunda película favorita es "American History X"',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: imag11
+        imagen: imag11,
+        tipoImagen : "vertical"
     },
     { 
         texto: 'Mi banda favoita es: ',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: imag12A
+        imagen: imag12A,
+        tipoImagen : "cuadrada"
     
     }
 ];
 
-
+let numerosUsados =  []
 
 
 
@@ -135,53 +133,55 @@ function numRandom(){
 
     
     
-    return  Math.floor( Math.random() * 12 )    
+    return  Math.floor( Math.random() * 10 )    
     
     
 }
 
 
 
+function renderTexto(){ //apertura funcion
 
-function renderTexto(){
-   
-
-
-
+    
     let num = numRandom() //para que las funciones tengan el mismo numero random
+
+
+     if(datos[num].tipoImagen === "cuadrada"){
+  
+    document.getElementById("mostrar").innerHTML = `
+
+    <h3 class="texto" >${datos[num].texto}</h3>
     
-    datos[num].repeticiones += 1;
-   
-   
-   // if (datos[num].repeticiones < 2 ){
-
-
-   
-   let nuevoDato = document.createElement('div'); 
+    <img class="cuadradra" src="${datos[num].imagen}" />
     
-    nuevoDato.textContent = datos[num].texto; 
+    `
+    }else if (datos[num].tipoImagen === "vertical"){
+
+  
+        document.getElementById("mostrar").innerHTML = `
     
-    mostrar.appendChild(nuevoDato)
-     
-    
-
-    let nuevaImagen = document.createElement('img');
-    
-    nuevaImagen.src = datos[num].imagen;
-
-   
-    mostrar.appendChild(nuevaImagen)
-
-   // }else{
-
-
-   // }
+        <h3 class="texto" >${datos[num].texto}</h3>
+        
+        <img class="vertical" src="${datos[num].imagen}" />
+        
+        `
 
     
+    }else{
+    document.getElementById("mostrar").innerHTML = `
     
+    <h3 class="texto" >${datos[num].texto}</h3>
+    
+    <img class="horizontal" src="${datos[num].imagen}" />
+    
+    `
+  
+    }
+       
+    
+        
 
-}   
-
+} //cierre de funcion
 
 
 
@@ -196,3 +196,6 @@ randomBtn.addEventListener("click", function() {
     //datos[num].repeticiones += 1;
    
 })
+
+   
+
