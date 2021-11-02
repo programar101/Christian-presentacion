@@ -1,6 +1,0 @@
-No he empezado con el css, el que está es de la versión anterior de la página.
-
-Pendiente: 
-
-- hacer que no se puedan repetir los datos random
-- aplicar css
