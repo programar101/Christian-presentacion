@@ -1,3 +1,32 @@
+let pagInicio = document.getElementById("cuerpo").innerHTML = `
+
+<div class="textoPrincipal"id="presentacion">
+
+
+<p>Hola, soy <em>Christian</em>. Presiona el botón para obtener un dato random sobre mi  </p>
+
+</div>
+
+
+<button  id="random-btn">Dato Random</button>
+
+<div id=botonReinicio></div>
+`
+
+let pagFinal = `
+
+        <h3 class="texto" > Eso es todo. Tampoco soy tan interesante.</h3>
+
+        
+        <div>
+
+        <button  id="botonReinicio">Reiniciar</button>
+
+        </div>
+        `
+
+
+let textoVacio = ""
 
 let datos =  [
     { 
@@ -13,10 +42,10 @@ let datos =  [
         tipoImagen : "cuadrada"
     },
     { 
-        texto: 'Vivo en Parque Chacabuco.',
+        texto: 'Vivo en Florida Oeste.',
         repeticiones: 0, //variable vacía para almacenar el numero de intentos
-        imagen: new Image().src ="https://www.tuguiasana.org/wp-content/uploads/2018/10/Fuente_de_Parque_Chacabuco-650x500.jpg" ,
-        tipoImagen : "cuadrada"
+        imagen: new Image().src ="https://upload.wikimedia.org/wikipedia/commons/c/cb/Estaci%C3%B3n_Florida_de_la_l%C3%ADnea_Belgrano_Norte_en_Florida_Oeste.jpg" ,
+        tipoImagen : "horizontal"
     },
     { 
         texto: ' Mi libro favorito es "Hombres de Maíz" de Miguel Angel de Asturias',
@@ -63,13 +92,34 @@ let datos =  [
     }
 ];
 
-let numerosUsados =  []
+let guardaArchivos = [] //acá se guardan los objetos que borro de "datos"
 
-
-
-let mostrar = document.getElementById("mostrar")
+const mostrar = document.getElementById("mostrar")
 
 const randomBtn = document.getElementById("random-btn")
+
+const botonReinicio = document.getElementById("botonReinicio")
+
+
+
+function reinicio(){
+
+    document.getElementById("cuerpo").innerHTML = pagInicio;
+
+    for (let i = 0; i < guardaArchivos.length; i++) {
+      
+        datos.push(guardaArchivos[i])
+    
+      } 
+      
+}
+
+botonReinicio.addEventListener("click", function() {
+
+    reinicio()
+    
+   
+})
 
 
 
@@ -88,16 +138,11 @@ function renderTexto(){ //apertura funcion
 
     if(datos.length === 0){
 
-
-        document.getElementById("cuerpo").innerHTML = ""
+    
+        document.getElementById("cuerpo").innerHTML = pagFinal
+       
+       
         
-        document.getElementById("mostrar").innerHTML = `
-
-        <h3 class="texto" > Bueno, eso es todo. Tampoco soy tan interesante.</h3>
-
-
-        `
-
     }else{
     let num = numRandom() //para que las funciones tengan el mismo numero random
 
@@ -112,6 +157,13 @@ function renderTexto(){ //apertura funcion
     
     `
 
+     let verificacion = JSON.stringify(guardaArchivos)
+
+        document.getElementById("verificar").innerHTML = `
+  
+         <p>${verificacion}</p>`  //para verificar que guardaArchivos.push funcione
+   
+    guardaArchivos.push(num)
     datos.splice(num,1);
   // datos[num].repeticiones += 1
 
@@ -122,8 +174,11 @@ function renderTexto(){ //apertura funcion
   
     }//cierre de funcion
        
+
+
+
     
-        
+
 
  
 
@@ -143,5 +198,9 @@ randomBtn.addEventListener("click", function() {
 })
 
 
+
+
+
+   
 
 
