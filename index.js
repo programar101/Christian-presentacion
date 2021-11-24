@@ -1,3 +1,18 @@
+let pagFinal = document.getElementById("cuerpo").innerHTML = `
+
+<div class="textoPrincipal"id="presentacion">
+
+    <h3 class="texto" > Eso es todo. Tampoco soy tan interesante.</h3>
+
+    </div>      
+     
+
+    <button onclick="reinicio_func()">Reiniciar</button>
+
+       
+        `
+
+
 let pagInicio = document.getElementById("cuerpo").innerHTML = `
 
 <div class="textoPrincipal"id="presentacion">
@@ -10,20 +25,9 @@ let pagInicio = document.getElementById("cuerpo").innerHTML = `
 
 <button  id="random-btn">Dato Random</button>
 
-<div id=botonReinicio></div>
+
 `
 
-let pagFinal = `
-
-        <h3 class="texto" > Eso es todo. Tampoco soy tan interesante.</h3>
-
-        
-        <div>
-
-        <button  id="botonReinicio">Reiniciar</button>
-
-        </div>
-        `
 
 
 let textoVacio = ""
@@ -98,28 +102,22 @@ const mostrar = document.getElementById("mostrar")
 
 const randomBtn = document.getElementById("random-btn")
 
-const botonReinicio = document.getElementById("botonReinicio")
+const reinicio = document.getElementById("reinicio")
 
 
 
-function reinicio(){
 
-    document.getElementById("cuerpo").innerHTML = pagInicio;
+function reinicio_func(){
 
-    for (let i = 0; i < guardaArchivos.length; i++) {
-      
-        datos.push(guardaArchivos[i])
+
     
-      } 
-      
-}
-
-botonReinicio.addEventListener("click", function() {
-
-    reinicio()
+    document.getElementById("cuerpo").innerHTML=pagInicio;
     
    
-})
+    datos.push(guardaArchivos.length);  
+}
+
+
 
 
 
@@ -140,7 +138,17 @@ function renderTexto(){ //apertura funcion
 
     
         document.getElementById("cuerpo").innerHTML = pagFinal
+
+        
+            
        
+        
+
+          
+         
+        
+        
+         
        
         
     }else{
@@ -156,16 +164,19 @@ function renderTexto(){ //apertura funcion
          <img class=${datos[num].tipoImagen} src="${datos[num].imagen}" />
     
     `
-
+/*
      let verificacion = JSON.stringify(guardaArchivos)
 
         document.getElementById("verificar").innerHTML = `
   
          <p>${verificacion}</p>`  //para verificar que guardaArchivos.push funcione
+
+         */
    
-    guardaArchivos.push(num)
+    guardaArchivos.push(datos[num])
+   
     datos.splice(num,1);
-  // datos[num].repeticiones += 1
+  
 
 }
 
@@ -177,14 +188,6 @@ function renderTexto(){ //apertura funcion
 
 
 
-    
-
-
- 
-
-
-
-
 randomBtn.addEventListener("click", function() {
 
     document.getElementById("mostrar").innerHTML="";
@@ -192,8 +195,6 @@ randomBtn.addEventListener("click", function() {
 
     renderTexto()
  
-
-    //datos[num].repeticiones += 1;
    
 })
 
