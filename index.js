@@ -114,7 +114,7 @@ function reinicio_func(){
     document.getElementById("cuerpo").innerHTML=pagInicio;
     
    
-    datos.push(guardaArchivos.length);  
+    
 }
 
 
@@ -140,15 +140,19 @@ function renderTexto(){ //apertura funcion
         document.getElementById("cuerpo").innerHTML = pagFinal
 
         
-            
+        datos = guardaArchivos; 
+       // guardaArchivos.splice(-1) 
        
-        
+        /*
+        let verificacion = JSON.stringify(datos)
 
+        document.getElementById("verificar").innerHTML = `
+  
+         <p>${verificacion}</p>`  //para verificar 
           
-         
-        
-        
-         
+        */
+                
+      
        
         
     }else{
