@@ -1,3 +1,4 @@
+
 function numRandom() {
 
 
@@ -16,24 +17,23 @@ function renderTexto() { //apertura funcion
 
 
         datos = guardaArchivos;
+
+        guardaArchivos = [];
+       
         // guardaArchivos.splice(-1) 
 
         /*
-        let verificacion = JSON.stringify(datos)
+        let verificacion = JSON.stringify(guardaArchivos)
 
         document.getElementById("verificar").innerHTML = `
   
          <p>${verificacion}</p>`  //para verificar 
           
-        */
-
-
-
+       */
 
     } else {
+
         let num = numRandom() //para que las funciones tengan el mismo numero random
-
-
 
 
         document.getElementById("mostrar").innerHTML = `
@@ -66,13 +66,16 @@ function renderTexto() { //apertura funcion
 
 
 function reinicio_func() {
+   
+    location.reload()
 
-
-
+/*
     document.getElementById("cuerpo").innerHTML = pagInicio;
+    numRandom()
 
+}
 
-
+*/
 }
 
 let datos = [
@@ -141,6 +144,9 @@ let datos = [
 
 let guardaArchivos = [] //acá se guardan los objetos que borro de "datos"
 
+let img = new Image()
+ 
+img.src = ""
 
 let pagFinal = document.getElementById("cuerpo").innerHTML = `
 
@@ -150,11 +156,10 @@ let pagFinal = document.getElementById("cuerpo").innerHTML = `
 
     </div>      
      
-
-    <button onclick="reinicio_func()">Reiniciar</button>
-
-       
-        `
+        <img class="imgFinal" src="https://c.tenor.com/U2JqGqBXqZgAAAAM/cat-sad.gif" />
+        
+        <button onclick="reinicio_func()">Reiniciar</button>
+       `
 
 
 let pagInicio = document.getElementById("cuerpo").innerHTML = `
@@ -180,16 +185,14 @@ const mostrar = document.getElementById("mostrar")
 
 const randomBtn = document.getElementById("random-btn")
 
-
-
-
-
 randomBtn.addEventListener("click", function () {
+
+
 
     document.getElementById("mostrar").innerHTML = "";
 
-
     renderTexto()
+
 
 
 })
