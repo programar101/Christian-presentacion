@@ -1,6 +1,4 @@
-
 function numRandom() {
-
 
 
     return Math.floor(Math.random() * datos.length)
@@ -19,7 +17,7 @@ function renderTexto() { //apertura funcion
         datos = guardaArchivos;
 
         guardaArchivos = [];
-       
+
         // guardaArchivos.splice(-1) 
 
         /*
@@ -60,22 +58,20 @@ function renderTexto() { //apertura funcion
     }
 
 
-
-
 }//cierre de funcion
 
 
 function reinicio_func() {
-   
+
     location.reload()
 
-/*
-    document.getElementById("cuerpo").innerHTML = pagInicio;
-    numRandom()
-
-}
-
-*/
+    /*
+        document.getElementById("cuerpo").innerHTML = pagInicio;
+        numRandom()
+    
+    }
+    
+    */
 }
 
 let datos = [
@@ -145,7 +141,7 @@ let datos = [
 let guardaArchivos = [] //acá se guardan los objetos que borro de "datos"
 
 let img = new Image()
- 
+
 img.src = ""
 
 let pagFinal = document.getElementById("cuerpo").innerHTML = `
@@ -188,11 +184,9 @@ const randomBtn = document.getElementById("random-btn")
 randomBtn.addEventListener("click", function () {
 
 
-
     document.getElementById("mostrar").innerHTML = "";
 
     renderTexto()
-
 
 
 })
