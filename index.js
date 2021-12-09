@@ -1,37 +1,59 @@
+function generadorRandomNumbers() {
 
-function numRandom() {
 
-    return Math.floor(Math.random() * datos.length)
+
+    for (let i = 0; i < datos.length; i++) {
+
+        let randomNumber = i
+
+        almacenNumeros.push(randomNumber);
+
+
+
+
+    }
 
 }
 
+
+
+function selectorNumbersArray() {
+
+
+
+    return Math.floor(Math.random() * datos.length)
+
+
+}
+
+
 function renderTexto() { //apertura funcion
 
-    if (datos.length === 0) {
+    if (almacenNumeros.length === 0) {
 
 
         document.getElementById("cuerpo").innerHTML = pagFinal
 
 
-        datos = guardaArchivos;
 
-        guardaArchivos = [];
-       
-        // guardaArchivos.splice(-1) 
 
-        /*
-        let verificacion = JSON.stringify(guardaArchivos)
 
-        document.getElementById("verificar").innerHTML = `
-  
-         <p>${verificacion}</p>`  //para verificar 
-          
-       */
+
+        almacenNumeros = [];
+
+
+
+
+
 
     } else {
 
-        const num = numRandom() //para que las funciones tengan el mismo numero random
-        const dato =datos[num]
+
+
+        const num = selectorNumbersArray();  //para que las funciones tengan el mismo numero random
+
+        const dato = datos[num];
+
 
 
         document.getElementById("mostrar").innerHTML = `
@@ -41,30 +63,20 @@ function renderTexto() { //apertura funcion
          <img class=${dato.tipoImagen} src="${dato.imagen}" />
     
     `
-        /*
-             let verificacion = JSON.stringify(guardaArchivos)
-        
-                document.getElementById("verificar").innerHTML = `
-          
-                 <p>${verificacion}</p>`  //para verificar que guardaArchivos.push funcione
-        
-                 */
 
-        guardaArchivos.push(datos[num])
-
-        datos.splice(num, 1);
-
+        almacenNumeros.splice(num, 1);
 
     }
 
 
 
 
-}//cierre de funcion
+}
+
 
 
 // function reinicio_func() {
-   
+
 //     location.reload()
 
 // /*
@@ -78,10 +90,10 @@ function renderTexto() { //apertura funcion
 
 
 
-let guardaArchivos = [] //acá se guardan los objetos que borro de "datos"
+let almacenNumeros = []
 
 let img = new Image()
- 
+
 img.src = ""
 
 let pagFinal = document.getElementById("cuerpo").innerHTML = `
@@ -137,6 +149,16 @@ randomBtn.addEventListener("click", function () {
 
 
 })
+
+generadorRandomNumbers();
+
+let verificacion = JSON.stringify(almacenNumeros)
+
+document.getElementById("verificar").innerHTML = `
+  
+         <p>${verificacion}</p>`  //para verificar 
+
+
 
 
 

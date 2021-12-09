@@ -26,6 +26,7 @@ margin-right: auto;
 display:flex;
 padding-left: 50px;
 padding-right: 50px;
+justify-content: center;
     
 }
 

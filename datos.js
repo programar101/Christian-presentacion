@@ -51,3 +51,14 @@ let datos = [
 
     }
 ];
+
+/*
+             let verificacion = JSON.stringify(guardaArchivos)
+        
+                document.getElementById("verificar").innerHTML = `
+          
+                 <p>${verificacion}</p>`  //para verificar que guardaArchivos.push funcione
+        
+                 */
+
+       
