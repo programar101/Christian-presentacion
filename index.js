@@ -1,4 +1,4 @@
-function generadorRandomNumbers() {
+function generarNumeros() {
 
 
 
@@ -8,16 +8,16 @@ function generadorRandomNumbers() {
 
         almacenNumeros.push(randomNumber);
 
-
+        
 
 
     }
-
+       
 }
 
 
 
-function selectorNumbersArray() {
+function generarNumerosRandom() {
 
 
 
@@ -48,9 +48,11 @@ function renderTexto() { //apertura funcion
 
     } else {
 
+        const num = generarNumerosRandom();  //para que las funciones tengan el mismo numero random
+       
+        //while(randomsGenerados.length !== num ){
 
-
-        const num = selectorNumbersArray();  //para que las funciones tengan el mismo numero random
+        
 
         const dato = datos[num];
 
@@ -66,10 +68,15 @@ function renderTexto() { //apertura funcion
 
         almacenNumeros.splice(num, 1);
 
-    }
+    
 
+    let verificacion = JSON.stringify(almacenNumeros)
 
+    document.getElementById("verificar").innerHTML = `
+      
+             <p>${verificacion}</p>`  //para verificar
 
+            }
 
 }
 
@@ -88,7 +95,7 @@ function renderTexto() { //apertura funcion
 // */
 // }
 
-
+let randomsGenerados= []
 
 let almacenNumeros = []
 
@@ -150,13 +157,9 @@ randomBtn.addEventListener("click", function () {
 
 })
 
-generadorRandomNumbers();
+generarNumeros();
 
-let verificacion = JSON.stringify(almacenNumeros)
-
-document.getElementById("verificar").innerHTML = `
-  
-         <p>${verificacion}</p>`  //para verificar 
+ 
 
 
 
